@@ -21,8 +21,6 @@ stages:
   
   jobs:
   - job: Application
-    pool:
-      vmImage: $(vmImage)
     steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
@@ -44,8 +42,6 @@ stages:
   jobs:
   - deployment: DeployWeb
     displayName: deploy Web App
-    pool:
-      vmImage: $(vmImage)
     # creates an environment if it doesn't exist
     environment: 'Development'
     strategy:
